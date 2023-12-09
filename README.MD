@@ -50,6 +50,9 @@ This data will be consumed by Jazzy Investment in the database for their stock t
 
 - The two DataFrames obtained from the web scraping process are concatenated, and missing values in the 'Volume' column are filled with the mean volume of all companies that traded on a particular day.
 
+### 5. Data Loading:
+
+- The final DataFrame is loaded into the 'stock' table in the PostgreSQL database using SQLAlchemy.
 
 ### 6. Clean-up:
 
