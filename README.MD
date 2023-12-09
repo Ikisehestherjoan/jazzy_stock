@@ -1,4 +1,3 @@
-Certainly! Here's a modified version for your README file:
 
 ---
 
@@ -23,3 +22,50 @@ This data will be consumed by Jazzy Investment in the database for their stock t
 3. Your transformation should include a column called `Date` which shows the date for which the data was scrapped.
 
 4. For companies that do not have a value for volume traded for a particular day, then the value for volume should be the mean volume of all companies that traded that day.
+
+## Technical Details
+
+### Programming Language:
+- Python
+
+### Libraries Used:
+- Pandas
+- SQLAlchemy
+- Psycopg2
+
+
+## Project Steps:
+
+### 1. Database Connection:
+
+- A PostgreSQL database connection is established using the `psycopg2` library. The database credentials include the username, password, host, and database name.
+
+### 2. Table Creation:
+
+- A table named 'stock' is created in the PostgreSQL database using the `create_engine` and `execute` functions.
+
+### 3. Web Scraping:
+
+- Data is extracted from the [Nigeria Stock Exchange website](https://afx.kwayisi.org/ngx/) using  Pandas.
+
+### 4. Data Transformation:
+
+- The two DataFrames obtained from the web scraping process are concatenated, and missing values in the 'Volume' column are filled with the mean volume of all companies that traded on a particular day.
+
+
+### 6. Clean-up:
+
+- Cursors and connections are closed to ensure proper resource management.
+
+
+```
+
+## How to Run the Project:
+
+1. Clone the repository: `git clone <repository_url>`
+2. Navigate to the project directory: `cd web-scraper-etl-project`
+3. Create a virtual environment: `virtualenv venv` (activate it with `source venv/bin/activate` or `venv\Scripts\activate` on Windows)
+4. Install dependencies: `pip install -r requirements.txt`
+5. Run the Python script: `python web_scraper_etl.py`
+
+---
