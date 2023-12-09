@@ -1,6 +1,3 @@
-Certainly! Here's a modified version for your README file:
-
----
 
 # Web Scrapper ETL Project
 
